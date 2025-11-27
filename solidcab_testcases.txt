@@ -1,0 +1,11 @@
+ID	Feature	Preconditions	Steps	Expected Result	Priority
+TC-F-01	Search vehicles	Landing page loaded	1. Enter origin Pune 2. Enter destination Lonavala 3. Select date/time 4. Click Search	List of available vehicles with fare estimate appears	High
+TC-F-02	View fare breakdown	Result list present	Click a vehicle > View fare details	"Fare breakdown shows base fare, distance, taxes, driver allowance"	High
+TC-F-03	Book one-way	"User logged in, search complete"	Select vehicle -> Enter passenger details -> Confirm -> Choose payment (mock) -> Confirm booking	Booking confirmation page with booking ID & driver ETA shown; email/SMS sent	High
+TC-F-04	OTP login (new number)	On login screen	Enter phone number -> Receive OTP -> Enter OTP -> Login	User logged in and redirected to dashboard	High
+TC-F-05	Modify booking (change return date)	Booking exists and modifiable	Open booking -> Click Modify -> Change return date -> Save	Booking updated; price recalculated accordingly	Medium
+TC-F-06	Cancel booking	Booked slot within allowed cancellation window	Open booking -> Cancel -> Confirm	Booking status = Cancelled; refund (if applicable) initiated; notifications sent	High
+TC-F-07	Multi-city booking	User logged in	Enter multi-city itinerary (Pune?Mumbai?Lonavala) -> Search -> Book	Booking created with correct legs and combined fare	High
+TC-F-08	Invalid date (past)	Search form	Select a past date -> Click Search	"Validation error: ""Select a future date"""	High
+TC-N-01	Payment failure (negative)	On payment page	Simulate payment gateway failure	Booking not confirmed; user sees error and option to retry	High
+TC-S-01	Cross-browser check	On staging	"Run booking flow on Firefox, Chrome"	Flow works with no layout break and elements clickable	Medium
